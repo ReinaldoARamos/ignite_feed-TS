@@ -1,0 +1,21 @@
+.wrapper{
+   max-width: 70rem;
+   margin: 2rem auto; /*Serve para caso a tela seja dimunuida além de 70 REM ele de umes espaçamento entre o conteudo
+   e as laterais*/
+   padding: 0 1rem;  /*centratlizando conteúdoi*/ 
+
+   display: grid; /*trabalha com colunas*/
+   grid-template-columns: 256px 1fr; /*Definindo um tamanho fixo para a coluna e 1fr para tamanho flexivel*/
+   gap: 2rem ;/*Espaço entre ambas as colunas*/
+   align-items: flex-start,
+}
+
+@media(max-width: 768px){
+
+   html{
+      font-size: 87.5%;
+   }
+   .wrapper{
+      grid-template-columns:  1fr;
+   }
+}

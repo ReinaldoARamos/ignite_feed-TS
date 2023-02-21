@@ -1,0 +1,60 @@
+.sidebar {
+    background: var(--grey-800);
+    border-radius: 8px;
+    overflow: hidden; /*Os elementos dentro do side bar ocupam somente seu container*/
+}
+
+.cover{
+    width: 100%;
+    height: 72px;
+    object-fit: cover; /*Impede a imagem de distorcer*/
+}
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer{
+    border-top: 1px solid var(--grey-600);
+    margin-top: 1.5rem;
+    padding: 1.5rem/*cima*/ 2rem /*lados*/ 2rem/*baixo*/;
+    
+}
+
+.footer a {
+    background: transparent;
+    color: var(--green-500);
+    border: 1px solid var(--green-500);
+    border-radius: 8px;
+    height: 58px;
+    padding: 0 1.5rem;
+    font-weight: bold;
+    display: block;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s, background-color 0.2s;
+    gap: 0.75rem
+}
+
+.footer a:hover {
+    background: var(--green-500);
+    color: white;
+
+}
+
+
+.profile strong {
+    color: var(--grey-100);
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+
+.profile span{ 
+    font-size: 0.875rem;   
+    color: var(--grey-400);
+}

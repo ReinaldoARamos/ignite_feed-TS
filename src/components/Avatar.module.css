@@ -1,0 +1,17 @@
+.avatar{
+    height: 4rem;
+  
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 4px 4px 4px;
+   
+}
+
+.avatarWithBorder{
+    height: 4rem;
+    margin-top: -2rem;
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 4px 4px 4px;
+    border: 2px solid var(--green-300);
+}

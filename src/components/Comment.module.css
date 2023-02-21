@@ -1,0 +1,82 @@
+.comment{
+    margin-top:  1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.comment >img {
+    width: 3rem;
+    height: 3rem;
+
+}
+
+.commentBox{
+    flex: 1; /*faz a div ocupar seu espaço máximo*/
+}
+
+.commentContent {
+    background-color: var(--grey-700);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.commentContent header {
+    display: flex;
+    align-items: flex-start; /*Para deixar os itens no inicio*/
+    justify-content: space-between;
+}
+
+.authorAndTime strong{
+    display: block;
+    font-size: 0.875rem;
+    line-height: 1.6rem;
+    
+}
+
+.authorAndTime time{
+    display: block;
+    line-height: 1.6rem;
+    color: var(--grey-400);
+  
+    
+}
+
+.comment header button {
+    background: transparent;
+    color: var(--grey-500);
+    cursor: pointer;
+    line-height: 0;
+    border-radius: 2px;
+    transition: color 0.2s, background-color 0.2s;
+}
+
+.comment header button:hover {
+    color: var(--red-500);
+}
+
+.commentBox footer{
+    margin-top: 1rem;
+}
+
+.commentBox footer button{
+    background: transparent;
+    border: 0;
+    color: var(--grey-400);
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+}
+
+
+.commentBox footer button svg{
+    margin-right: 0.5rem;
+
+}
+
+.commentBox footer button span::before{
+    content: "\2022";
+    padding: 0 0.2rem;
+}
+
+
