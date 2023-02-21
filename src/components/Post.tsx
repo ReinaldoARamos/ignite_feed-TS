@@ -3,7 +3,8 @@ import { Comment } from "./Comment";
 import styles from "./Post.module.css";
 import { format, formatDistanceToNow } from "date-fns";
 import ptBr from "date-fns/locale/pt-BR";
-import { FormEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
+import { Container } from "react-dom";
 
 interface Author {
   name: string,
@@ -14,8 +15,13 @@ interface Author {
 interface postProps{
   author: Author,
   publishedAt: Date,
+  content: Content[]
+}
+interface Content{
+  type: 'paragraph',
   content: string
 }
+
 export function Post({ author, publishedAt, content }  : postProps ) {
   const [comment, setComment] = useState(
     [
@@ -37,20 +43,21 @@ export function Post({ author, publishedAt, content }  : postProps ) {
     addSuffix: true,
   });
 
-  function deleteComment(commentToDelete) {
+  function deleteComment(commentToDelete : string) {
     const commentWithoutDeleteOne = comment.filter(comments=> {
       return comments != commentToDelete
     })
     
    setComment(commentWithoutDeleteOne)
   }
-  function handleNewCommentChange(event : FormEvent) {
+  function handleNewCommentChange(event : ChangeEvent<HTMLTextAreaElement>) {
     setnewCommentText(event.target.value);
    
   }
   function handleComment(event : FormEvent) {
+    
     event.preventDefault();
-   const newCommentText = event.target.comment.value
+   
    setComment([...comment, newCommentText])
    setnewCommentText('');
   }
@@ -84,9 +91,9 @@ export function Post({ author, publishedAt, content }  : postProps ) {
       <form onSubmit={handleComment} className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
 
-        <textarea placeholder="Deixe seu comentario" name="comment" onChange={handleNewCommentChange} value={newCommentText} />
+        <textarea placeholder="Deixe seu comentario" name="comment"  onChange={handleNewCommentChange} value={newCommentText} />
         <footer>
-          <button type="submit">Comentar</button>
+          <button type="submit" >Comentar</button>
         </footer>
       </form>
       <div className={styles.commentList}>
