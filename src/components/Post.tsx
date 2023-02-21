@@ -3,7 +3,7 @@ import { Comment } from "./Comment";
 import styles from "./Post.module.css";
 import { format, formatDistanceToNow } from "date-fns";
 import ptBr from "date-fns/locale/pt-BR";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 
 interface Author {
   name: string,
@@ -44,11 +44,11 @@ export function Post({ author, publishedAt, content }  : postProps ) {
     
    setComment(commentWithoutDeleteOne)
   }
-  function handleNewCommentChange() {
+  function handleNewCommentChange(event : FormEvent) {
     setnewCommentText(event.target.value);
    
   }
-  function handleComment() {
+  function handleComment(event : FormEvent) {
     event.preventDefault();
    const newCommentText = event.target.comment.value
    setComment([...comment, newCommentText])
