@@ -61,6 +61,7 @@ export function Post({ author, publishedAt, content }  : postProps ) {
    setComment([...comment, newCommentText])
    setnewCommentText('');
   }
+  
   return (
     <article className={styles.Post}>
       <header>
@@ -91,7 +92,7 @@ export function Post({ author, publishedAt, content }  : postProps ) {
       <form onSubmit={handleComment} className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
 
-        <textarea placeholder="Deixe seu comentario" name="comment"  onChange={handleNewCommentChange} value={newCommentText} />
+        <textarea required placeholder="Deixe seu comentario" name="comment"  onChange={handleNewCommentChange} value={newCommentText} />
         <footer>
           <button type="submit" >Comentar</button>
         </footer>
